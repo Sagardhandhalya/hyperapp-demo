@@ -13,8 +13,6 @@
     "hyperapp": "^2.0.20"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.5",
-    "@babel/plugin-transform-react-jsx": "^7.17.3",
     "@parcel/transformer-sass": "^2.3.2",
     "parcel": "^2.3.2"
   }

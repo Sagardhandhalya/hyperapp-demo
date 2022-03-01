@@ -1,30 +1,9 @@
 import { h, text, app } from "hyperapp";
+import Layout from "./components/Layout/Layout";
+import initialState from "./state";
 
-const AddTodo = (state) => ({
-  ...state,
-  value: "",
-  todos: state.todos.concat(state.value),
-});
+const node = document.getElementById("app");
 
-const NewValue = (state, event) => ({
-  ...state,
-  value: event.target.value,
-});
+const view = (state) => h("div", {}, [Layout(state)]);
 
-app({
-  init: { todos: ["Learn Hyperapp"], value: "" },
-  view: ({ todos, value }) =>
-    h("main", {}, [
-      h("h1", {}, text("To-do list ✏️")),
-      h(
-        "ul",
-        {},
-        todos.map((todo) => h("li", {}, text(todo)))
-      ),
-      h("section", {}, [
-        h("input", { type: "text", oninput: NewValue, value }),
-        h("button", { onclick: AddTodo }, text("Add new")),
-      ]),
-    ]),
-  node: document.getElementById("app"),
-});
+app({ init: initialState, view, node });

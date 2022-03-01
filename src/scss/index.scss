@@ -1,3 +1,13 @@
-body{
-    background-color: lightcyan;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.button_primary {
+  border: none;
+  background-color: rgb(68, 133, 245);
+  padding: 10px;
+  color: white;
+  border-radius: 4px;
 }
